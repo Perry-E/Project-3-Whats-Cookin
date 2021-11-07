@@ -100,7 +100,7 @@ export default function RecipePage(props) {
       <Section first>
         <Container>
           <GridRow colTemplate={"auto 500px"} gap="24px" style={{justifyItems: "center"}}>
-            <Image.Recipe src={recipe?.picture?.url} />
+            <Image.Recipe src={recipe?.picture?.avatar} />
             <Col>
               <h1>{recipe?.name}</h1>
               <GridRow>

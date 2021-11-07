@@ -1,5 +1,7 @@
+const mongoose = require("mongoose");
 const { Schema, model } = require("mongoose");
 
+//! type = breakfast/lunch/dinner
 const recipeSchema = Schema(
   {
     name: { type: String, required: true },
@@ -12,11 +14,11 @@ const recipeSchema = Schema(
     },
     ingredients: [{ amount: Number, unit: String, name: String }],
     picture: {
-      url: String,
+      avatar: String,
       cloudinary_id: String,
     },
     steps: [{ title: String, body: String }],
-    owner: { type: Schema.Types.ObjectId, ref: "Users" },
+    owner: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   },
   { timestamps: true }
 );

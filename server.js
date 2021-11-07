@@ -7,11 +7,15 @@ const session = require("express-session");
 //* CONFIGURATION
 require("dotenv").config();
 const app = express();
+// const port = 4000;
 const port = process.env.PORT ?? 3002;
-
-mongoose.connect(process.env.MONGODB_URI ?? "mongodb://localhost:27017/whatsCookin");
+mongoose.connect(
+  process.env.MONGODB_URI ?? "mongodb://localhost:27017/whatsCookin"
+);
 mongoose.connection.on("open", () => {
-  console.log(`Connection to MongoDB ${process.env.MONGODB_URI ? "Atlas" : ""} is open`);
+  console.log(
+    `Connection to MongoDB ${process.env.MONGODB_URI ? "Atlas" : ""} is open`
+  );
 });
 
 //* Middleware
@@ -46,11 +50,29 @@ app.use("/api/mealPlan", mealPlanController);
 const reviewsController = require("./controllers/reviews");
 app.use("/api/reviews", reviewsController);
 
+//* image routes
+const imageController = require("./controllers/image");
+app.use("/api/image", imageController);
+
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
-});
+      res.sendFile(path.join(__dirname, "./client/build", "index.html"));
+    });
 
 //* Listener
 app.listen(port, () => {
   console.log(`Express server is live at ${port}`);
 });
+
+
+
+
+
+// const app = express();
+// const port = 4000;
+
+// mongoose.connect(
+//   "mongodb+srv://afaris:afaris2127@firstcluster.r8zxu.mongodb.net/whatscookin?retryWrites=true&w=majority",
+//   {
+//     useNewUrlParser: true,
+//   }
+// );

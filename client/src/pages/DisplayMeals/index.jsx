@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import Card from "../../components/Cards";
-import { Section } from "../../components/Containers";
 import SearchBar from "../../components/SearchBar";
 
 const DisplayMeals = (props) => {
@@ -11,17 +10,16 @@ const DisplayMeals = (props) => {
   return (
     <>
       <div className="menuIndex">
-        <Section>
-          <h1>Meals</h1>
-        </Section>
-
+        <h1 style={{marginBottom:"70px", marginTop:"50px"}}>Meals</h1>
         <SearchBar recipes={allMeals} setFilteredMeal={setFilteredMeal} />
-        
         <div className="container">
           {filteredMeal?.map((item) => {
             return (
               <Card.Recipe
-                recipe={item}
+                id={item._id}
+                image={item?.picture?.avatar}
+                name={item.name}
+                time={item.time}
                 style={{margin: '6px 12px', marginTop: 0}}
               />
             );

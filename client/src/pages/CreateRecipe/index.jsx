@@ -18,7 +18,7 @@ const initialState = {
 		description: '',
 		tags: [],
 		time: {hour: '', minutes: ''},
-		picture: null,
+		avatar: null,
 		ingredients: [new Ingredient()],
 		steps: [new Step()]
 	},
@@ -107,7 +107,7 @@ const CreateRecipe = (props) => {
 			async function fetchRecipeInfo() {
 				const res = await axios.get(`/api/recipes/${params.recipeId}`)
 
-				setForm({name : res.data.name, description: res.data.description, tags: res.data.tags, time: {hour: res.data.time?.hour || '', minutes: res.data.time?.minutes || ''}, picture: res.data?.picture?.url});
+				setForm({name : res.data.name, description: res.data.description, tags: res.data.tags, time: {hour: res.data.time?.hour || '', minutes: res.data.time?.minutes || ''}, avatar: res.data?.picture?.avatar});
 				setSteps(res.data.steps)
 				setIngredients(res.data.ingredients)
 			}
@@ -221,8 +221,8 @@ const CreateRecipe = (props) => {
 
 	const postRecipe = async () => {
 		const formData = new FormData();
-		if (typeof form.picture !== 'string') {
-			formData.append('picture', form.picture)
+		if (typeof form.avatar !== 'string') {
+			formData.append('avatar', form.avatar)
 		}
 		formData.append('name', form.name)
 		formData.append('description', form.description)
@@ -422,8 +422,8 @@ const CreateRecipe = (props) => {
 						
 						{/* Recipe Picture Input */}
 						<ImageInput
-							onChange={(file) => setForm({...form, picture: file})}
-							value={form.picture}
+							onChange={(file) => setForm({...form, avatar: file})}
+							value={form.avatar}
 							height={'600px'}
 							width={'400px'}
 							borderRadius={'12px'}
