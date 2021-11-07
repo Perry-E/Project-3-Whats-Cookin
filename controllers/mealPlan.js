@@ -54,20 +54,18 @@ router.post('/:id', async (req, res) => {
 
 
 // Increase current step by 1
-router.put('/:id/updateStep', async (req, res) => {
-  try {
-    console.log(req.query)
-    const mealPlan = await MealPlan.findById(req.params.id);
+router.put('/:id/increaseStep', async (req, res) => {
+  const {id} = req.params;
 
-    mealPlan.currentStep = Number(req.query.value);
-    await mealPlan.save()
-
-    console.log(mealPlan)
-
-    res.status(200).json(mealPlan);
-  } catch (err) {
-    console.log(err)
-  }
+  MealPlan.findOneAndUpdate(
+    {_id: id},
+    {$inc: { currentStep: 1 }},
+    {new: true},
+    (err, updatedPlan) => {
+      if (err) {console.log(err)}
+      res.json(updatedPlan)
+    }
+   )
 })
 
 // Toggle shopping list item
@@ -86,11 +84,10 @@ router.put('/:id/:itemId/:value', async (req, res) => {
 })
 
 // Set meal plan as removed
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', (req, res) => {
   MealPlan.findByIdAndUpdate(
     req.params.id,
     {$set: {removed: true}},
-    {new: true},
     (err, deletedData) => {
       console.log(err);
       res.json(deletedData)

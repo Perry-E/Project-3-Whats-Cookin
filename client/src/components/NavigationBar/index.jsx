@@ -33,7 +33,7 @@ const NavigationBar = (props) => {
               <LogInButton />
               <SignUpButton />
             </>) : (<>
-              <ProfilePortal img={loggedUser?.profileImage?.url} to={`/profile/${loggedUser._id}`}/>
+              <ProfilePortal img={loggedUser?.profileImage?.image} to={`/profile/${loggedUser._id}`}/>
               <LogOutButton onLogOut={() => setLoggedUser(null)} />
               </>)}
           </Row>

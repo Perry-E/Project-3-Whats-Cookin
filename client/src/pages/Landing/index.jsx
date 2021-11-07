@@ -7,13 +7,6 @@ import Card from "../../components/Cards";
 import { Container, Section } from "../../components/Containers";
 import { Banner, TutorialRow } from "./components";
 import Footer from "../../components/Footer";
-import styled from "styled-components";
-
-const Subheader = styled.h2`
-  margin: 0;
-  margin-bottom: 18px;
-  text-align: ${prop => prop.left ? "left" : prop.centered ? "center" : 'initial'};
-`;
 
 const Landing = () => {
   const [card, setCard] = useState();
@@ -33,44 +26,50 @@ const Landing = () => {
         <Banner />
 
         <Section>
-          <Container fullWidth>
-            <Subheader centered>About Us</Subheader>
-            <p className="landing">
-              Stuck at home coding and thinking about your next fancy meal? Well
-              look no further because What's Cookin is your go to service provider
-              that offers you a wide array of recipes, from breakfast to dinner!
-              Members of What's Cookin are able to use our service to its fullest
-              potential, so what are you waiting for, sign up today!
-            </p>
-          </Container>
+          <h3 className="landing">About Us</h3>
+          <p className="landing">
+            Stuck at home coding and thinking about your next fancy meal? Well
+            look no further because What's Cookin is your go to service provider
+            that offers you a wide array of recipes, from breakfast to dinner!
+            Members of What's Cookin are able to use our service to its fullest
+            potential, so what are you waiting for, sign up today!
+          </p>
         </Section>
 
         <Section>
-        <Container fullWidth>
-          <Subheader>How it works</Subheader>
+        <Container style={{width: '100%'}}>
+          <h3 style={{marginBottom: 24, textAlign: 'left'}}>How it works</h3>
           <TutorialRow  />
           <div className="bar-container" style={{ margin: "0px" }}></div>
           </Container>
         </Section>
 
         <Section>
-          <Container fullWidth>
-          <Subheader>Meals</Subheader>
-
-          <div className="container" style={{marginRight: -12, marginBottom: -12}}>
+          <Container style={{width: '100%'}}>
+          <h3 style={{ textAlign: "left" }}>Meals</h3>
+          <div className="container" style={{paddingBottom: '-12px'}}>
             {card?.map((item, index) => {
               return (<>
                 {index < 5 && (
                   <Card.Recipe
-                    recipe={item}
-                    style={{marginRight: 12, marginBottom: 12}}
+                    id={item._id}
+                    image={item?.picture?.avatar}
+                    name={item?.name}
+                    time={item?.time}
+                    style={{margin: '6px 12px', marginTop: 0}}
                   />
                 )}
               </>);
             })}
           </div>
           <Link to={`/meals`}>
-            <Button.Ghost rounded style={{marginTop: 18, width: 200, borderStyle: 'dashed'}}>
+            <Button.Ghost
+              style={{
+                borderRadius: "5px",
+                padding: "10px 30px 10px 30px",
+                marginTop: "30px",
+              }}
+            >
               See More
             </Button.Ghost>
           </Link>
@@ -78,7 +77,6 @@ const Landing = () => {
         </Section>
 
         <Section className="bottom-signup" last>
-          <Container fullWidth>
           <h3 style={{ margin: 0, marginBottom: 10 }}>
             What are you waiting for?
           </h3>
@@ -87,11 +85,17 @@ const Landing = () => {
             to={`/signup`}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <Button.Primary color={'#FFB800'} rounded style={{width: 100}}>
+            <Button.Alt
+              style={{
+                borderRadius: "5px",
+                color: "white",
+                margin: "20px",
+                padding: "10px 30px 10px 30px",
+              }}
+            >
               Sign Up
-            </Button.Primary>
+            </Button.Alt>
           </Link>
-          </Container>
         </Section>
       </div>
       <Footer />

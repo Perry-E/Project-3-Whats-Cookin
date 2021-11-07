@@ -5,7 +5,7 @@ const usersSchema = Schema({
   name: {type: String, require: true},
   password: {type: String, require: true},
   profileImage: {
-    url: String,
+    image: String,
     cloudinary_id: String,
   },
 })
