@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Reviews = require('../models/reviews')
 
-//! Get all reviews - TEST FUNCTION REMOVE WHEN FINALISED
 router.get('/', async(req, res) => {
   const reviews = await Reviews.find();
   res.json(reviews)

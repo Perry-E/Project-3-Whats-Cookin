@@ -11,8 +11,6 @@ import UserProfile from "./pages/UserProfile";
 import RecipePage from "./pages/Recipe";
 import DisplayMeals from "./pages/DisplayMeals";
 import MealPlan from "./pages/MealPlan";
-import StepsIndex from "./pages/MealPlan/Steps";
-import CreateReview from "./pages/MealPlan/Review";
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -48,18 +46,7 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/profile/:userId" component={UserProfile} />
         <Route path="/recipe/:recipeId" component={RecipePage} />
-
-        <Route path="/planner/review/:recipeId">
-          <CreateReview />
-        </Route>
-
-        <Route path="/planner/:mealPlanId/steps">
-          <StepsIndex />
-        </Route>
-
-        <Route path="/planner/:mealPlanId/">
-          <MealPlan />
-        </Route>
+        <Route path="/planner/:mealPlanId/" component={MealPlan} />
       </Switch>
     </div>
   );

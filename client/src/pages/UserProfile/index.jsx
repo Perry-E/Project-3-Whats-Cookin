@@ -69,7 +69,7 @@ const UserProfile = () => {
 		<Page>
 			<Section>
 				<Col hCenter>
-					<Image.Profile src={userInfo?.profileImage?.image} size={'300px'}/>
+					<Image.Profile src={userInfo?.profileImage?.url} size={'300px'}/>
 					<h1>{userInfo?.name}</h1>
 				</Col>
 			</Section>
@@ -87,7 +87,7 @@ const UserProfile = () => {
 								key={mealPlan._id}
 								name={mealPlan?.recipe?.name} 
 								id={mealPlan?._id}
-								image={mealPlan?.recipe?.picture?.avatar}
+								image={mealPlan?.recipe?.picture?.url}
 								style={{margin: '18px 9px', marginTop: 0}}
 								currentStep={mealPlan?.currentStep}
 								time={mealPlan?.recipe?.time}
@@ -108,7 +108,7 @@ const UserProfile = () => {
 									key={recipe?._id}
 									name={recipe?.name} 
 									id={recipe?._id}
-									image={recipe?.picture?.avatar}
+									image={recipe?.picture?.url}
 									style={{margin: '18px 9px', marginTop: 0}}
 									onRecipeDelete={(deletedRecipe) => setUserRecipes(userRecipes.filter((recipe) => recipe._id !== deletedRecipe._id))}
 								/>

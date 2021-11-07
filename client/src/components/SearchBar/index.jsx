@@ -6,13 +6,11 @@ const SearchBarStyle = styled.div`
     background-color: #e9ecef;
     border: 0;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 1rem;
     padding: 15px;
-    height: 10px;
     width: 300px;
     margin: 0 auto;
     margin-bottom: 80px;
-    margin-top: -80px;
   }
 `
 

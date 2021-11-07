@@ -8,12 +8,12 @@ const UserRecipeCard = (prop) => {
 
   return (
     <CardBase style={prop.style}>
-      <CardImage src={prop.image} onClick={() => history.push(`/recipe/${prop.id}`)}/>
+    <CardImage src={prop.recipe?.picture?.url} onClick={() => history.push(`/recipe/${prop.recipe?._id}`)}/>
 
       <CardContent>
-        <h3>{prop.name}</h3>
+        <h3>{prop.recipe?.name}</h3>
         <GridRow>
-          <Chip.EstTime time={prop.time} />
+          <Chip.EstTime time={prop.recipe?.time} />
         </GridRow>
       </CardContent>
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { hexToRGB } from "../../util";
 
 /** Base styling for all buttons */
 const ButtonBase = styled.button`
@@ -28,6 +29,9 @@ const GhostButton = styled(ButtonBase)`
   background-color: transparent;
   border: 1px solid ${(prop) => prop.color || '#FFB800'};
   color: ${(prop) => prop.color || '#FFB800' };
+  :hover {
+    background-color: ${(prop) => hexToRGB(prop.color || '#FFB800', .05)}
+  }
 `
 
 const Button = {

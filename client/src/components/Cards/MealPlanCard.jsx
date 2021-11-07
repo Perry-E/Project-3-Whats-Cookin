@@ -13,7 +13,7 @@ const MealPlanCard = (prop) => {
   }
 
   const GoToPlanButton = () => {
-    const yetToStart = prop.currentStep === 0;
+    const yetToStart = prop.shoppingList.filter((item) => item.got === true).length === 0 && prop.currentStep === 0;
     return (
       <Button.Primary 
         color={yetToStart ? "black" : "#FFB800"}

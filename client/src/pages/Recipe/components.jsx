@@ -50,7 +50,7 @@ export const ReviewItem = (props) => {
   return (
     <ReviewContainer>
       <GridRow colTemplate={'auto 1fr'}>
-      <Image.Profile src={user?.profileImage?.image} size={'80px'} style={{marginRight: '12px'}} />
+      <Image.Profile src={user?.profileImage?.url} size={'80px'} style={{marginRight: '12px'}} />
       <Col>
         <h3 style={{margin: 0}}>{review?.title} {review.rating && (<>| <RatingIndicator rating={review.rating} /></>)}</h3>
         <p style={{margin: 0, marginTop: '3px', color: '#999999', fontSize: '.8rem'}}>{format(new Date(review.createdAt), 'dd/MM/yy h:mmb')}</p>

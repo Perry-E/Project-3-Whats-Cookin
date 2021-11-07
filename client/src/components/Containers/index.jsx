@@ -58,4 +58,5 @@ export const Container = styled.div`
   flex: 1;
   max-width: 1400px;
   box-sizing: border-box;
+  width: ${prop => prop.fullWidth ? "100%" : "initial"};
 `
