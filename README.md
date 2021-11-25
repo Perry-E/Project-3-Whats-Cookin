@@ -12,42 +12,65 @@ Contribute their own ideas/recipes to the growing list of recipes on the app - M
 Settings - TBC (Maybe to update user info)
 
 ## Wireframe
-https://www.figma.com/file/fJvkvPXkBJ7xkaVHYttYEY/Untitled?node-id=298%3A19047
+https://www.figma.com/file/I0CSCQFktP0fuWOagbMJe6/GA-Project-3?node-id=0%3A1
 
 ## What value does your application provide to your audience?
-It's an avenue for users to track their workload accordingly, observe relevant trends in the procedures that they conoduct, so that they can properly plan for future procedures (i.e. busiest months, weeks, morning or afternoon sessions etc.) Information that otherwise would not be shared/tracked by clinics. So instead of users having to create their own spreadsheets etc, they can simply sign up for an account and let this application do the work for them.
+It's an avenue for users to explore different ideas to spice up their meals and share their own versions of recipes 
+The individual recipes have clear and concise steps, each recipe also informs users of the estimated time it will take and a checklist of all the ingredients required (Perfect for users that are new to cooking)
  
 ## What steps have we taken to entice users?
-Surveys and questionaires have been sent out to potential users, to try and include as many features as possible, that can potentially aid them in their daily lives. 
+Users can explore available meals submitted to the site, and use the guide function for the meal they have chosen. However to submit their own recipe, and to save their progress on the meal guide they would have to sign up for an account
  
+
+## Technical Requirements
+* Have at least 2 related models (with references) and an additional user model with authentication. There should be at least 2 types of users.
+* Include all major CRUD functions for at least one of the models
+* Manage team contributions and collaboration by using standard Git flow on Github.
+* Nicely styled front-end with clean & well-formatted CSS, with or without a framework.
+* Deploy your application online, so that it is publically accessible
+* User stories that apply to the functionality of your app, crafted as a team.
+* Wireframes for the views you planned to create
+
 ## Tech used
-* FireBase
+* MongoDB 
+* Express
 * React
 * Node
-* Chart.js
-* Date-fns
-* React Bootstrap
-* Material UI
  
 ## General Approach
-## Main/Dashboard page
-Where users can go straight to inputting the respective procedures they have conducted for the day
+## Main/Landing page
+A quick introduction (What this website is about, how users can make the most out of this app)
+A selection of meals that users can quickly access to (Most viewed/Well reviewed)
  
 ## Sign Up
-Requires Email, Password
+Requires Name, Email, Password
  
 ## Log In
 Requires Email and Password
 
-## Analytics Page (Work In Progress)
-Where users can view the statistics and data of what they have logged previously, in different illustrations, pie charts, bar graphs, line graphs etc. This page is subject to change, more will be added/changed to suit the needs of the users.
+## Meals Page
+When users click on the meals link on the nav bar or the see more button, they are redirected to the Meals page where they can view different meals, sorted according to Breakfast, Lunch and Dinner
+When users have decided and clicked into a recipe then they will be directed to the individual recipe (show page)
  
-## Billing Page
-Where users can view how much they received after payments are split between them and the clinics, data can be sorted by year/month
+## Individual Recipe (Show Page)
+How long it will take, and rating of the recipe
+Shows users the ingredients needed
+Step by step guide
+The ability to add to their planner (Provided they are logged in)
+Ability to view the reviews made by users (And add one if they are logged in)
  
-## Location Page
-The first page users are greeted with when they sign up for an account, so that they are able to input the respective locations/clinics they frequent, which will be reflected in the other pages mentioned earlier. They can also update(edit) / delete the locations whenever they like.
+## Profile Page
+Individual profile page where the user can access the recipes that they added 
+View their own recipes that they contributed to the app
+Settings, where they can edit their personal info
  
-## Settings Page
-Where users can update their email / password, they will receive notifications of the changes via the email that they have provided, there is an option to reset password too, in the event that they forgot their password.
+## Create Recipe Page
+Where users can add the relevant information about their recipe that they would like to contribute
+View their own recipes that they contributed to the app
+Settings, where they can edit their personal info
+ 
+## Meal helper
+The first page shows the selected recipe’s ingredients, and the option for users to check off the items when they have it
+Pressing next brings them to a step by step guide on how to proceed
+When the cooking is done, they can leave a review on the difficulty, how it tastes etc (Not a requirement so they an skip it if they press done)
 
