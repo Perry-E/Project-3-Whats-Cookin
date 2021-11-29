@@ -14,6 +14,9 @@ Settings - TBC (Maybe to update user info)
 ## Wireframe
 https://www.figma.com/file/I0CSCQFktP0fuWOagbMJe6/GA-Project-3?node-id=0%3A1
 
+## App deployed on Heroku
+https://project3whatscookin.herokuapp.com/
+
 ## What value does your application provide to your audience?
 It's an avenue for users to explore different ideas to spice up their meals and share their own versions of recipes 
 The individual recipes have clear and concise steps, each recipe also informs users of the estimated time it will take and a checklist of all the ingredients required (Perfect for users that are new to cooking)
