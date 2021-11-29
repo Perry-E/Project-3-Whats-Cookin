@@ -1,15 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:wght@400;700&display=swap");
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landing-div,
+.menuIndex {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  font-family: "Noto Serif Display", serif;
+}
+
+.mealType {
+  text-align: left;
+}
+
+.landing {
+  text-align: center;
+}
+
+.how {
+  text-align: left;
+  margin: 20px 0px -10px 0px;
+}
+
+.bar-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding-top: 15px;
+  margin-top: 55px;
+  text-align: center;
+}
+
+.bar-container div {
+  background-color: #fff;
+  font-weight: bold;
+  color: #ffb800;
+  border: 2px solid #ffb800;
+  margin-top: -45px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 99;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 20%;
+  height: 20%;
+  margin: 0px 5px 0px 10px;
+}
+
+.container {
+  transition: 0.3s;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.how-container {
+  border-radius: 5px;
+  display: flex;
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+.child {
+  margin: 0 auto;
+}
+
+.card-text {
+  text-align: left;
+  padding: 5px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.card-container {
+  padding: 2px 16px;
+  height: 30%;
+  width: 30%;
+}
+
+img {
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.bottom-signup {
+  text-align: center;
+}
+
+.strikethrough:checked + span {
+  text-decoration: line-through;
+}
+
+.reviewColumn {
+  font-family: "Noto Serif", serif;
 }

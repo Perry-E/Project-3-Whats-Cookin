@@ -37,3 +37,5 @@ const Button = {
 };
 
 export default Button;
+
+export { default as BackButton } from './BackButton';
